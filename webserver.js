@@ -41,7 +41,29 @@ router
     .get("/api/products", (context) => {
         return send(context, "frontend/products.json");
     })
-    
+
+    .get("/api/shoppingCart/totalprice", async(context) => {
+        const productsFile = await Deno.readTextFile("frontend/products.json");
+        let products = JSON.parse(productsFile);
+        let cart = await context.state.session.get("shoppingCart");
+        if (cart == undefined) {
+            cart = [];
+        }
+
+        let totalprice = 0;
+        for (let i = 0; i < cart.length; i++) {
+            let item;
+            products.forEach((element) => {
+                if (element.id == cart[i]) {
+                    item = element;
+                }
+            });
+            totalprice = totalprice + item.specialOffer;
+        }
+
+        context.response.body = totalprice;
+    });
+
 app.use(session.use()(session));
 app.use(router.routes());
 app.listen({ port: 8000 });

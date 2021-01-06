@@ -1,0 +1,34 @@
+.header {
+    text-align: center;
+    color: green;
+    grid-column: 2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.shoppingCart {
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cartImg {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.elementPriceNormal {
+    color: red;
+    text-decoration: line-through;
+}
+
+.elementPriceSpecial {
+    color: green;
+    font-weight: bold;
+}
