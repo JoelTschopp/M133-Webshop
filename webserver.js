@@ -41,3 +41,8 @@ router
     .get("/api/products", (context) => {
         return send(context, "frontend/products.json");
     })
+    
+app.use(session.use()(session));
+app.use(router.routes());
+app.listen({ port: 8000 });
+console.log("Server running on http://localhost:8000");
