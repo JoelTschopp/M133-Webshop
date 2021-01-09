@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/paymentStyle.css" />
+    <title>Dorfladen</title>
+  </head>
+
+  <body>
+    <header id="header"></header>
+
+    <div>
+      <form class="form" onsubmit="return finishOrder()">
+        <label>Vorname</label>
+        <input id="firstName" type="text" /><br />
+        <label>Nachname</label>
+        <input id="lastName" type="text" /><br />
+        <label>Email</label>
+        <input type="email" /><br />
+
+        <input type="submit" class="finishBtn" value="Bestellung abschliessen"></input>
+      </form>
+    </div>
+    <script src="/assets/scripts/payment.js"></script>
+    <script src="/assets/scripts/style.js"></script>
+  </body>
+</html>

@@ -2,6 +2,8 @@ Einzelprojekt Joel
 
 2. und 3. commit nicht komplett commited (laufen einzel nicht, ich habe da einen überlegungsfehler gemacht)
 
+Routing von payment zu startseite funktioniert nicht
+
 Installationsanleitung
 
 Applikation starten

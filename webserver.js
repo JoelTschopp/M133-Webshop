@@ -25,6 +25,9 @@ router
   .get("/formular", (context) => {
     return send(context, "frontend/html/formular.html");
   })
+  .get("/payment", (context) => {
+    return send(context, "frontend/html/payment.html");
+  })
   //JS
   .get("/assets/scripts/:file", (context) => {
     return send(context, "/frontend/scripts/" + context.params.file);
