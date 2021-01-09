@@ -47,5 +47,5 @@ async function addProductToCart() {
             method: "POST"
     });
 
-    createhead();
+    header();
 }

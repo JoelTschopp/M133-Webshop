@@ -76,6 +76,27 @@ router
     let shoppingCart = await context.state.session.get("shoppingCart");
     await context.state.session.set("shoppingCart", [...shoppingCart, product]);
     context.response.status = 200;
+  })
+  .post("/api/shoppingcart", async (context) => {
+    let shoppingCart = await context.request.body({ type: "json" }).value;
+    await context.state.session.set("shoppingCart", shoppingCart);
+
+    context.response.status = 200;
+    context.response.body = { message: "OK" };
+  })
+  .get("/api/shoppingcart", async (context) => {
+    if ((await context.state.session.get("shoppingCart")) == undefined) {
+      await context.state.session.set("shoppingCart", []);
+    }
+
+    let shoppingCart = await context.state.session.get("shoppingCart");
+
+    if (shoppingCart == undefined) {
+      context.response.body = undefined;
+    } else {
+      context.response.body = shoppingCart;
+    }
+    context.response.status = 200;
   });
 
 app.use(session.use()(session));
