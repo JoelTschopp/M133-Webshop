@@ -11,13 +11,13 @@
     <header id="header"></header>
 
     <div>
-      <form class="form" onsubmit="return finishOrder()">
+      <form class="form" method="GET" action="http://localhost:8000/">
         <label>Vorname</label>
-        <input id="firstName" type="text" /><br />
+        <input id="firstName" type="text" pattern="[a-zA-Z]*" required /><br />
         <label>Nachname</label>
-        <input id="lastName" type="text" /><br />
+        <input id="lastName" type="text" pattern="[a-zA-Z]*" required/><br />
         <label>Email</label>
-        <input type="email" /><br />
+        <input type="email" required/><br />
 
         <input type="submit" class="finishBtn" value="Bestellung abschliessen"></input>
       </form>
